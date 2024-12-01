@@ -3,11 +3,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ChatListScreen extends StatelessWidget {
+  const ChatListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Comment List' ,style: TextStyle(
+        title: const Text('Comment List' ,style: TextStyle(
                                   fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w800,
@@ -18,7 +20,7 @@ class ChatListScreen extends StatelessWidget {
         stream: FirebaseFirestore.instance.collection('chats').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
 
           if (snapshot.hasError) {
@@ -26,7 +28,7 @@ class ChatListScreen extends StatelessWidget {
           }
 
           if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-            return Center(child: Text('No chats found.'));
+            return const Center(child: Text('No chats found.'));
           }
 
           return ListView.builder(
@@ -42,17 +44,17 @@ class ChatListScreen extends StatelessWidget {
               Timestamp timestamp = chatData['timestamp'];
 
               return Card(
-                color: Color.fromARGB(71, 207, 64, 251),
-                margin: EdgeInsets.all(8.0),
+                color: const Color.fromARGB(71, 207, 64, 251),
+                margin: const EdgeInsets.all(8.0),
                 child: ListTile(
                   
-                  title: Text('$text'),
+                  title: Text(text),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Recipient UID: $recipientUid'),
                       Text('Timestamp: ${timestamp.toDate()}'),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       ElevatedButton(
                         onPressed: () {
                           // Toggle Adminseen field
@@ -67,7 +69,7 @@ class ChatListScreen extends StatelessWidget {
         fontSize: 14.0,
       );
                         },
-                        child: Text('Mark as Seen'),
+                        child: const Text('Mark as Seen'),
                       ),
                     ],
                   ),

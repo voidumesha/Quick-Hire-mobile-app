@@ -9,6 +9,8 @@ import 'package:quickhire/onbording.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthCheck extends StatefulWidget {
+  const AuthCheck({super.key});
+
   @override
   _AuthCheckState createState() => _AuthCheckState();
 }
@@ -35,19 +37,19 @@ class _AuthCheckState extends State<AuthCheck> {
   @override
   Widget build(BuildContext context) {
     if (_isFirstLaunch) {
-      return OnboardingScreen(); // Replace with your Onboarding screen widget
+      return const OnboardingScreen(); // Replace with your Onboarding screen widget
     } else {
       return StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Scaffold(
+          return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
           );
         } else if (snapshot.hasData) {
-          return dashboard();
+          return const dashboard();
         } else {
-          return login();
+          return const login();
         }
       },
     );

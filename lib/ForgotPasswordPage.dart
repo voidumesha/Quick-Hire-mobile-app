@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
+  const ForgotPasswordPage({super.key});
+
   @override
   _ForgotPasswordPageState createState() => _ForgotPasswordPageState();
 }
@@ -33,7 +35,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         msg: 'Password reset email sent!',
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.SNACKBAR,
-        backgroundColor: Color.fromARGB(255, 128, 1, 1),
+        backgroundColor: const Color.fromARGB(255, 128, 1, 1),
         textColor: Colors.white,
         fontSize: 14.0,
       );
@@ -50,7 +52,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
         'Forgot Password',
         style: TextStyle(
           fontSize: 16,
@@ -60,7 +62,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         ),
       )),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -73,12 +75,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   labelText: 'Email',
                   enabledBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Color.fromARGB(255, 120, 11, 192)),
+                        const BorderSide(color: Color.fromARGB(255, 120, 11, 192)),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Color.fromARGB(255, 120, 11, 192)),
+                        const BorderSide(color: Color.fromARGB(255, 120, 11, 192)),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
@@ -89,22 +91,22 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _sendPasswordResetEmail();
                   }
                 },
-                child: Text('Send Reset Link'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
-                      Color.fromARGB(255, 120, 11, 192), // Background color
+                      const Color.fromARGB(255, 120, 11, 192), // Background color
                   foregroundColor: Colors.white, // Text color
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
+                child: Text('Send Reset Link'),
               ),
             ],
           ),

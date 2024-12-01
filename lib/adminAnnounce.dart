@@ -7,6 +7,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:path/path.dart' as path;
 
 class AddAnnouncementPage extends StatefulWidget {
+  const AddAnnouncementPage({super.key});
+
   @override
   _AddAnnouncementPageState createState() => _AddAnnouncementPageState();
 }
@@ -18,8 +20,8 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
   bool _isLoading = false;
 
   Future<void> _pickImage() async {
-    final ImagePicker _picker = ImagePicker();
-    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    final ImagePicker picker = ImagePicker();
+    final XFile? pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       setState(() {
@@ -73,7 +75,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
         });
 
         // Show success message or navigate to another screen
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text('Announcement added successfully!'),
         ));
 
@@ -83,7 +85,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
       }
     } else {
       // Show validation error or required fields message
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Please add both text and an image.'),
       ));
     }
@@ -93,7 +95,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Announcement',style: TextStyle(
+        title: const Text('Add Announcement',style: TextStyle(
                                                   fontSize: 16,
                                                   fontFamily: 'Poppins',
                                                   fontWeight: FontWeight.w800,
@@ -102,13 +104,13 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                                                 ),),
         centerTitle: true,
       leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -118,7 +120,7 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                     height: 200,
                     width: double.infinity,
                     color: Colors.grey[300],
-                    child: Text(
+                    child: const Text(
                       'No image selected.',
                       style: TextStyle(
                         fontFamily: 'Poppins',
@@ -127,45 +129,45 @@ class _AddAnnouncementPageState extends State<AddAnnouncementPage> {
                     ),
                   )
                 : Image.file(_image!, height: 200.0, width: double.infinity, fit: BoxFit.cover),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton.icon(
-                  icon: Icon(Icons.image),
-                  label: Text('Pick Image'),
+                  icon: const Icon(Icons.image),
+                  label: const Text('Pick Image'),
                   onPressed: _pickImage,
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 _image != null
                     ? _isLoading
-                        ? Center(child: CircularProgressIndicator())
+                        ? const Center(child: CircularProgressIndicator())
                         : ElevatedButton.icon(
-                            icon: Icon(Icons.cloud_upload),
-                            label: Text('Upload Image'),
+                            icon: const Icon(Icons.cloud_upload),
+                            label: const Text('Upload Image'),
                             onPressed: _uploadImage,
                           )
                     : Container(),
               ],
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               controller: _textEditingController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Enter announcement text',
                 border: OutlineInputBorder(),
               ),
               maxLines: null, // Allow multiple lines
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton.icon(
-                icon: Icon(Icons.send),
-                label: Text('Send Announcement'),
+                icon: const Icon(Icons.send),
+                label: const Text('Send Announcement'),
                 onPressed: _addAnnouncement,
               ),
             ],

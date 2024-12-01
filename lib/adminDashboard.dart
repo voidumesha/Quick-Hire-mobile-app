@@ -6,7 +6,7 @@ import 'package:quickhire/adminbed.dart';
 import 'package:quickhire/paymentadmin.dart';
 
 class AdminDashboard extends StatefulWidget {
-  const AdminDashboard({Key? key}) : super(key: key);
+  const AdminDashboard({super.key});
 
   @override
   State<AdminDashboard> createState() => _DashboardState();
@@ -53,17 +53,17 @@ class _DashboardState extends State<AdminDashboard> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => login()),
+                                            builder: (context) => const login()),
                                       );
                                     },
-                                    icon: Icon(Icons.logout)),
+                                    icon: const Icon(Icons.logout)),
                               ],
                             ),
                           )
                         ],
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: 160,
                       width: MediaQuery.of(context).size.width,
                       child: Align(
@@ -121,14 +121,14 @@ class _DashboardState extends State<AdminDashboard> {
                             alignment: Alignment.center,
                             width: 100,
                             height: 100,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage('assets/megaphone.png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             width: 100,
                             child: const Text(
                               "Post Job Vacancy",
@@ -169,16 +169,16 @@ class _DashboardState extends State<AdminDashboard> {
                             alignment: Alignment.center,
                             width: 80,
                             height: 80,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage('assets/chat (1).png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             width: 100,
-                            child: Text(
+                            child: const Text(
                               "Students Comments",
                               maxLines: 2,
                               overflow: TextOverflow.fade,
@@ -202,7 +202,7 @@ class _DashboardState extends State<AdminDashboard> {
                         );
                       },
                       borderRadius: BorderRadius.circular(10),
-                      splashColor: Color.fromARGB(255, 233, 233, 233),
+                      splashColor: const Color.fromARGB(255, 233, 233, 233),
                       child: Column(
                         children: [
                           Container(
@@ -217,9 +217,9 @@ class _DashboardState extends State<AdminDashboard> {
                               ),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             width: 100,
-                            child: Text(
+                            child: const Text(
                               "View CV's",
                               maxLines: 2,
                               overflow: TextOverflow.fade,

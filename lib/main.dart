@@ -19,6 +19,7 @@ import 'package:quickhire/paymentadmin.dart';
 import 'package:quickhire/splash_screen.dart';
 import 'package:quickhire/sucsessfull.dart';
 
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -28,6 +29,8 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(

@@ -15,7 +15,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: PageView(
         controller: _pageController,
         // Disable swiping
@@ -103,7 +103,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             height: 10.0,
             decoration: BoxDecoration(
               color: _currentPage == index
-                  ? Color.fromARGB(255, 120, 11, 192)
+                  ? const Color.fromARGB(255, 120, 11, 192)
                   : Colors.grey,
               borderRadius: BorderRadius.circular(5.0),
             ),

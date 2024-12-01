@@ -34,7 +34,7 @@ class _loginState extends State<login> {
             padding: const EdgeInsets.only(top: 30),
             child: Stack(
               children: [
-                Container(
+                SizedBox(
                   height: 130,
                   width: MediaQuery.of(context).size.width,
                   child: Align(
@@ -57,7 +57,7 @@ class _loginState extends State<login> {
               ],
             ),
           ),
-          Text(
+          const Text(
             "Login",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -71,7 +71,7 @@ class _loginState extends State<login> {
             child: Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 242, 242, 242),
+                  color: const Color.fromARGB(255, 242, 242, 242),
                   borderRadius: BorderRadius.circular(10)),
               width: MediaQuery.of(context).size.width,
               height: 80,
@@ -80,7 +80,7 @@ class _loginState extends State<login> {
                   FocusManager.instance.primaryFocus?.unfocus();
                 },
                 controller: _usernameController,
-                cursorColor: Color.fromARGB(255, 120, 11, 192),
+                cursorColor: const Color.fromARGB(255, 120, 11, 192),
                 decoration: const InputDecoration(
                   prefixIcon: Icon(
                     Icons.mail_outline_outlined,
@@ -115,7 +115,7 @@ class _loginState extends State<login> {
             child: Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 242, 242, 242),
+                  color: const Color.fromARGB(255, 242, 242, 242),
                   borderRadius: BorderRadius.circular(10)),
               width: MediaQuery.of(context).size.width,
               height: 80,
@@ -125,9 +125,9 @@ class _loginState extends State<login> {
                 },
                 controller: _passwordController,
                 obscureText: showpassword,
-                cursorColor: Color.fromARGB(255, 120, 11, 192),
+                cursorColor: const Color.fromARGB(255, 120, 11, 192),
                 decoration: InputDecoration(
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.lock_outline_rounded,
                     color: Color.fromARGB(255, 53, 53, 53),
                   ),
@@ -144,30 +144,30 @@ class _loginState extends State<login> {
                       });
                     },
                     icon: showpassword
-                        ? Icon(
+                        ? const Icon(
                             Icons.visibility_off,
                             color: Color.fromARGB(255, 56, 56, 56),
                           )
-                        : Icon(
+                        : const Icon(
                             Icons.remove_red_eye_outlined,
                             color: Color.fromARGB(255, 120, 11, 192),
                           ),
                   ),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  labelStyle: TextStyle(
+                  labelStyle: const TextStyle(
                       color: Color.fromARGB(255, 120, 11, 192),
                       fontWeight: FontWeight.w800),
                   hintStyle:
-                      TextStyle(color: Color.fromARGB(255, 188, 188, 188)),
+                      const TextStyle(color: Color.fromARGB(255, 188, 188, 188)),
                   filled: true,
-                  fillColor: Color.fromARGB(255, 242, 242, 242),
+                  fillColor: const Color.fromARGB(255, 242, 242, 242),
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                  border: OutlineInputBorder(
+                      const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                  border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12.0)),
                     borderSide: BorderSide.none,
                   ),
-                  enabledBorder: OutlineInputBorder(
+                  enabledBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12.0)),
                     borderSide: BorderSide.none,
                   ),
@@ -186,14 +186,14 @@ class _loginState extends State<login> {
                     Checkbox(
                       tristate: false,
                       value: isChecked,
-                      activeColor: Color.fromARGB(255, 120, 11, 192),
+                      activeColor: const Color.fromARGB(255, 120, 11, 192),
                       onChanged: (values) {
                         setState(() {
                           isChecked = values;
                         });
                       },
                     ),
-                    Container(child: Text("Remember Me")),
+                    Container(child: const Text("Remember Me")),
                   ],
                 ),
               ),
@@ -207,7 +207,7 @@ class _loginState extends State<login> {
                           builder: (context) => ForgotPasswordPage()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     "Froget password?",
                     style: TextStyle(
                         color: Color.fromARGB(255, 120, 11, 192),
@@ -220,7 +220,7 @@ class _loginState extends State<login> {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(top: 30),
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width - 60,
                 height: 50,
                 child: isloging == true
@@ -228,7 +228,7 @@ class _loginState extends State<login> {
                         width: 10,
                         height: 20,
                         color: const Color.fromARGB(0, 244, 67, 54),
-                        child: Center(
+                        child: const Center(
                             child: CircularProgressIndicator(
                           color: Color.fromARGB(255, 120, 11, 192),
                         )),
@@ -244,14 +244,14 @@ class _loginState extends State<login> {
                               context: context);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(
+                          backgroundColor: const Color.fromARGB(
                               255, 120, 11, 192), // Background color
                           foregroundColor: Colors.white, // Text color
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0),
                           ),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Log In',
                           style: TextStyle(
                               fontWeight: FontWeight.w800, fontSize: 18),
@@ -266,8 +266,8 @@ class _loginState extends State<login> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 30),
+                const Padding(
+                  padding: EdgeInsets.only(left: 30),
                   child: Text(
                     "Not Registed?",
                     style: TextStyle(color: Color.fromARGB(255, 59, 59, 59)),
@@ -279,11 +279,11 @@ class _loginState extends State<login> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Register()),
+                        MaterialPageRoute(builder: (context) => const Register()),
                       );
                     },
                     radius: 20,
-                    child: Text(
+                    child: const Text(
                       "Create Account",
                       style: TextStyle(
                           color: Color.fromARGB(255, 120, 11, 192),
@@ -300,7 +300,7 @@ class _loginState extends State<login> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Logged in as an'),
+                  const Text('Logged in as an'),
                   InkWell(
                     onTap: () {
                       Navigator.push(
@@ -309,7 +309,7 @@ class _loginState extends State<login> {
                             builder: (context) => AdminLoginPage()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       " Company?",
                       style: TextStyle(
                           color: Color.fromARGB(255, 120, 11, 192),
@@ -322,11 +322,11 @@ class _loginState extends State<login> {
           ),
           Container(
             width: MediaQuery.of(context).size.width - 60,
-            padding: EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(top: 10),
             alignment: Alignment.center,
             child: RichText(
               textAlign: TextAlign.center,
-              text: TextSpan(
+              text: const TextSpan(
                 children: [
                   TextSpan(
                       text: "By continuing I agree to ",
@@ -347,7 +347,7 @@ class _loginState extends State<login> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           )
         ],
@@ -396,10 +396,10 @@ class _loginState extends State<login> {
         msg: message,
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.SNACKBAR,
-        backgroundColor: Color.fromARGB(134, 161, 0, 0),
-        textColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(134, 161, 0, 0),
+        textColor: const Color.fromARGB(255, 255, 255, 255),
         fontSize: 14.0,
       );
-    } catch (e) {}
+    }
   }
 }

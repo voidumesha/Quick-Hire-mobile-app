@@ -25,13 +25,14 @@ class _dashboardState extends State<dashboard> {
           .doc(user.uid)
           .snapshots();
     } else {
-      return Stream.empty(); // Return an empty stream when no user is signed in
+      return const Stream.empty(); // Return an empty stream when no user is signed in
     }
   }
 
   @override
   String paymenta = 'null';
   String bookedroom = 'No';
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
@@ -48,10 +49,10 @@ class _dashboardState extends State<dashboard> {
                         AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>>
                             snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Container(
+                        return SizedBox(
                           height: MediaQuery.of(context).size.height,
                           width: MediaQuery.of(context).size.width,
-                          child: Center(child: CircularProgressIndicator()),
+                          child: const Center(child: CircularProgressIndicator()),
                         );
                       } else if (snapshot.hasError) {
                         return Text("Error: ${snapshot.error}");
@@ -81,7 +82,7 @@ class _dashboardState extends State<dashboard> {
                                                   Radius.circular(50)),
                                               image: DecorationImage(
                                                 image: AssetImage(
-                                                    'assets/User.png'),
+                                                    'assets/admin.png'),
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -117,7 +118,7 @@ class _dashboardState extends State<dashboard> {
                                             IconButton(
                                               alignment: Alignment.topCenter,
                                               icon:
-                                                  Icon(Icons.logout, size: 25),
+                                                  const Icon(Icons.logout, size: 25),
                                               onPressed: () async {
                                                 await AuthService()
                                                     .signout(context: context);
@@ -129,7 +130,7 @@ class _dashboardState extends State<dashboard> {
                                     ],
                                   ),
                                 ),
-                                Container(
+                                SizedBox(
                                   height: 130,
                                   width: MediaQuery.of(context).size.width,
                                   child: Align(
@@ -140,7 +141,7 @@ class _dashboardState extends State<dashboard> {
                                           alignment: Alignment.center,
                                           width: 250,
                                           height: 90,
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             image: DecorationImage(
                                               image: AssetImage(
                                                   'assets/mainimg.png'),
@@ -150,8 +151,8 @@ class _dashboardState extends State<dashboard> {
                                     ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 10),
+                                const Padding(
+                                  padding: EdgeInsets.only(top: 10),
                                   child: Text(
                                     "Student dashboard",
                                     textAlign: TextAlign.center,
@@ -180,23 +181,23 @@ class _dashboardState extends State<dashboard> {
                                         },
                                         borderRadius: BorderRadius.circular(10),
                                         splashColor:
-                                            Color.fromARGB(255, 199, 199, 199),
+                                            const Color.fromARGB(255, 199, 199, 199),
                                         child: Column(
                                           children: [
                                             Container(
                                                 alignment: Alignment.center,
                                                 width: 100,
                                                 height: 100,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   image: DecorationImage(
                                                     image: AssetImage(
                                                         'assets/megaphone.png'),
                                                     fit: BoxFit.cover,
                                                   ),
                                                 )),
-                                            Container(
+                                            SizedBox(
                                               width: 100,
-                                              child: Text(
+                                              child: const Text(
                                                 "View              Jobs in Pure",
                                                 maxLines: 2,
                                                 textAlign: TextAlign.center,
@@ -233,23 +234,23 @@ class _dashboardState extends State<dashboard> {
                                         },
                                         borderRadius: BorderRadius.circular(10),
                                         splashColor:
-                                            Color.fromARGB(255, 199, 199, 199),
+                                            const Color.fromARGB(255, 199, 199, 199),
                                         child: Column(
                                           children: [
                                             Container(
                                                 alignment: Alignment.center,
                                                 width: 80,
                                                 height: 80,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   image: DecorationImage(
                                                     image: AssetImage(
                                                         'assets/chat (1).png'),
                                                     fit: BoxFit.cover,
                                                   ),
                                                 )),
-                                            Container(
+                                            SizedBox(
                                                 width: 100,
-                                                child: Text(
+                                                child: const Text(
                                                   "Add Comment",
                                                   maxLines: 2,
                                                   overflow: TextOverflow.fade,
@@ -268,28 +269,28 @@ class _dashboardState extends State<dashboard> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Payment2()),
+                                                    const Payment2()),
                                           );
                                         },
                                         borderRadius: BorderRadius.circular(10),
                                         splashColor:
-                                            Color.fromARGB(255, 199, 199, 199),
+                                            const Color.fromARGB(255, 199, 199, 199),
                                         child: Column(
                                           children: [
                                             Container(
                                                 alignment: Alignment.center,
                                                 width: 80,
                                                 height: 80,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   image: DecorationImage(
                                                     image: AssetImage(
                                                         'assets/cloud-computing (1).png'),
                                                     fit: BoxFit.cover,
                                                   ),
                                                 )),
-                                            Container(
+                                            SizedBox(
                                                 width: 100,
-                                                child: Text(
+                                                child: const Text(
                                                   "Upoload your CV",
                                                   maxLines: 2,
                                                   overflow: TextOverflow.fade,
@@ -314,7 +315,7 @@ class _dashboardState extends State<dashboard> {
                                   left: 50,
                                   right: 50,
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     width: MediaQuery.of(context).size.width,
                                     height: 55,
                                     color:

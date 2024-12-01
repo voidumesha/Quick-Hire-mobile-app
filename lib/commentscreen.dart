@@ -6,14 +6,14 @@ import 'package:intl/intl.dart';
 class ChatScreen extends StatefulWidget {
   final String recipientUid;
 
-  ChatScreen({Key? key, required this.recipientUid}) : super(key: key);
+  const ChatScreen({super.key, required this.recipientUid});
 
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  TextEditingController _messageController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
 
   void sendMessage() async {
     String messageText = _messageController.text.trim();
@@ -33,7 +33,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Comment', style: TextStyle(
+        title: const Text('Add Comment', style: TextStyle(
                                                   fontSize: 16,
                                                   fontFamily: 'Poppins',
                                                   fontWeight: FontWeight.w800,
@@ -54,7 +54,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   .snapshots(),
               builder: (ctx, AsyncSnapshot<QuerySnapshot> chatSnapshot) {
                 if (chatSnapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
 
                 if (chatSnapshot.hasError) {
@@ -62,7 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 }
 
                 if (!chatSnapshot.hasData || chatSnapshot.data!.docs.isEmpty) {
-                  return Center(child: Text('No comment yet'));
+                  return const Center(child: Text('No comment yet'));
                 }
 
                 final chatDocs = chatSnapshot.data!.docs;
@@ -80,14 +80,14 @@ class _ChatScreenState extends State<ChatScreen> {
                           : CrossAxisAlignment.start,
                       children: [
                         Container(
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           alignment: chatDocs[index]['senderUid'] == FirebaseAuth.instance.currentUser!.uid
                               ? Alignment.centerRight
                               : Alignment.centerLeft,
                           child: Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color:  Color.fromARGB(43, 233, 68, 255),
                                   borderRadius: BorderRadius.all(Radius.circular(20))
                                 ),
@@ -95,18 +95,18 @@ class _ChatScreenState extends State<ChatScreen> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 12.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
                           child: Text(
                             formattedTime,
-                            style: TextStyle(fontSize: 12.0, color: Colors.grey),
+                            style: const TextStyle(fontSize: 12.0, color: Colors.grey),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 12.0),
-                          child:chatDocs[index][ 'Adminseen']=='No'? Text(
+                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                          child:chatDocs[index][ 'Adminseen']=='No'? const Text(
                             'Pending',
-                            style: TextStyle(fontSize: 12.0, color: const Color.fromARGB(255, 255, 1, 1)),
-                          ):Text(
+                            style: TextStyle(fontSize: 12.0, color: Color.fromARGB(255, 255, 1, 1)),
+                          ):const Text(
                             'Seen',
                             style: TextStyle(fontSize: 12.0, color: Color.fromARGB(255, 1, 153, 255)),
                           ),
@@ -126,11 +126,11 @@ class _ChatScreenState extends State<ChatScreen> {
                 Expanded(
                   child: TextField(
                     controller: _messageController,
-                    decoration: InputDecoration(labelText: 'Type your message...'),
+                    decoration: const InputDecoration(labelText: 'Type your message...'),
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.send),
+                  icon: const Icon(Icons.send),
                   onPressed: sendMessage,
                 ),
               ],

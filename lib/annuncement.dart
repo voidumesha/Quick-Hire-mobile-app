@@ -3,11 +3,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
 
 class AnnouncementPage extends StatelessWidget {
+  const AnnouncementPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Job Announcements', style: TextStyle(
+        title: const Text('Job Announcements', style: TextStyle(
                                                   fontSize: 16,
                                                   fontFamily: 'Poppins',
                                                   fontWeight: FontWeight.w800,
@@ -19,7 +21,7 @@ class AnnouncementPage extends StatelessWidget {
         stream: FirebaseFirestore.instance.collection('announcements').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
 
           if (snapshot.hasError) {
@@ -27,7 +29,7 @@ class AnnouncementPage extends StatelessWidget {
           }
 
           if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
-            return Center(child: Text('No announcements found.'));
+            return const Center(child: Text('No announcements found.'));
           }
 
           return ListView.builder(
@@ -44,7 +46,7 @@ class AnnouncementPage extends StatelessWidget {
               String formattedDateTime = DateFormat.yMd().add_jm().format(dateTime);
 
               return Card(
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 child: ListTile(
                   title: Text(announcementText),
                   subtitle: Column(

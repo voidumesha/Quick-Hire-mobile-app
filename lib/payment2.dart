@@ -64,7 +64,7 @@ class _Payment2State extends State<Payment2> {
 
         print('ffffffffffffffffffffffffffffffffffffff');
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('File uploaded successfully')),
+          const SnackBar(content: Text('File uploaded successfully')),
         );
         Navigator.pushReplacement(
             context,
@@ -79,8 +79,8 @@ class _Payment2State extends State<Payment2> {
         msg: ' Error: $e',
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.SNACKBAR,
-        backgroundColor: Color.fromARGB(134, 161, 0, 0),
-        textColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(134, 161, 0, 0),
+        textColor: const Color.fromARGB(255, 255, 255, 255),
         fontSize: 14.0,
       );
 
@@ -94,11 +94,12 @@ class _Payment2State extends State<Payment2> {
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
           child: _isLoading
-              ? CircularProgressIndicator()
+              ? const CircularProgressIndicator()
               : Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -113,7 +114,7 @@ class _Payment2State extends State<Payment2> {
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
-                                  icon: Icon(Icons.arrow_back))
+                                  icon: const Icon(Icons.arrow_back))
                             ],
                           ),
                         ),
@@ -121,14 +122,14 @@ class _Payment2State extends State<Payment2> {
                             alignment: Alignment.topCenter,
                             width: 80,
                             height: 80,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
                                     'assets/cloud-computing (1).png'),
                                 fit: BoxFit.cover,
                               ),
                             )),
-                        Text(
+                        const Text(
                           "Upoload Payment Slip",
                           style: TextStyle(
                               fontSize: 18,
@@ -142,7 +143,7 @@ class _Payment2State extends State<Payment2> {
                                   onTap: isChecked != true ? _pickFile : null,
                                   borderRadius: BorderRadius.circular(10),
                                   splashColor:
-                                      Color.fromARGB(255, 199, 199, 199),
+                                      const Color.fromARGB(255, 199, 199, 199),
                                   child: Container(
                                     width:
                                         MediaQuery.of(context).size.width - 100,
@@ -151,10 +152,10 @@ class _Payment2State extends State<Payment2> {
                                         border: Border.all(
                                             color: isChecked == true
                                                 ? Colors.grey
-                                                : Color.fromARGB(
+                                                : const Color.fromARGB(
                                                     255, 120, 11, 192),
                                             width: 2),
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                             Radius.circular(20))),
                                     alignment: Alignment.center,
                                     child: Icon(
@@ -162,7 +163,7 @@ class _Payment2State extends State<Payment2> {
                                       size: 40,
                                       color: isChecked == true
                                           ? Colors.grey
-                                          : Color.fromARGB(255, 120, 11, 192),
+                                          : const Color.fromARGB(255, 120, 11, 192),
                                     ),
                                   ),
                                 )
@@ -170,14 +171,14 @@ class _Payment2State extends State<Payment2> {
                                   onTap: _pickFile,
                                   borderRadius: BorderRadius.circular(10),
                                   splashColor:
-                                      Color.fromARGB(255, 199, 199, 199),
+                                      const Color.fromARGB(255, 199, 199, 199),
                                   child: Container(
                                     width:
                                         MediaQuery.of(context).size.width - 100,
                                     decoration: BoxDecoration(
                                         border: Border.all(
                                             width: 2,
-                                            color: Color.fromARGB(
+                                            color: const Color.fromARGB(
                                                 255, 120, 11, 192))),
                                     height: 80,
                                     child: Row(
@@ -186,7 +187,7 @@ class _Payment2State extends State<Payment2> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
-                                        Icon(
+                                        const Icon(
                                           Icons.document_scanner_outlined,
                                           size: 40,
                                           color:
@@ -200,7 +201,7 @@ class _Payment2State extends State<Payment2> {
                                             'Selected file: $_fileName',
                                             maxLines: 3,
                                             overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontFamily: 'Poppins',
                                                 color: Color.fromARGB(
                                                     255, 52, 52, 52)),
@@ -216,14 +217,14 @@ class _Payment2State extends State<Payment2> {
                           child: ElevatedButton(
                             onPressed: _uploadFile,
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(
+                              backgroundColor: const Color.fromARGB(
                                   255, 120, 11, 192), // Background color
                               foregroundColor: Colors.white, // Text color
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0),
                               ),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Conform',
                               style: TextStyle(
                                   fontWeight: FontWeight.w800, fontSize: 18),

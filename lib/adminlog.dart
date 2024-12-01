@@ -4,6 +4,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:quickhire/adminDashboard.dart';
 
 class AdminLoginPage extends StatefulWidget {
+  const AdminLoginPage({super.key});
+
   @override
   _AdminLoginPageState createState() => _AdminLoginPageState();
 }
@@ -39,13 +41,13 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
         // Successful login
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => AdminDashboard()),
+          MaterialPageRoute(builder: (context) => const AdminDashboard()),
         );
         Fluttertoast.showToast(
           msg: "User successfully logged in",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.SNACKBAR,
-          backgroundColor: Color.fromARGB(255, 185, 27, 27),
+          backgroundColor: const Color.fromARGB(255, 185, 27, 27),
           textColor: Colors.white,
           fontSize: 14.0,
         );
@@ -66,7 +68,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
       msg: message,
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.SNACKBAR,
-      backgroundColor: Color.fromARGB(255, 185, 27, 27),
+      backgroundColor: const Color.fromARGB(255, 185, 27, 27),
       textColor: Colors.white,
       fontSize: 14.0,
     );
@@ -86,7 +88,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                 padding: const EdgeInsets.only(top: 30),
                 child: Stack(
                   children: [
-                    Container(
+                    SizedBox(
                       height: 130,
                       width: MediaQuery.of(context).size.width,
                       child: Align(
@@ -97,7 +99,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                             alignment: Alignment.center,
                             width: 250,
                             height: 90,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage('assets/mainimg.png'),
                                 fit: BoxFit.cover,
@@ -118,10 +120,10 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_back,
                             size: 30,
-                            color: const Color.fromARGB(255, 53, 53, 53),
+                            color: Color.fromARGB(255, 53, 53, 53),
                           ),
                         ),
                       ),
@@ -129,7 +131,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                   ],
                 ),
               ),
-              Text(
+              const Text(
                 "Compnay Login",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -144,7 +146,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                 child: Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 242, 242, 242),
+                    color: const Color.fromARGB(255, 242, 242, 242),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   width: MediaQuery.of(context).size.width,
@@ -154,8 +156,8 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                       FocusManager.instance.primaryFocus?.unfocus();
                     },
                     controller: _usernameController,
-                    cursorColor: Color.fromARGB(255, 120, 11, 192),
-                    decoration: InputDecoration(
+                    cursorColor: const Color.fromARGB(255, 120, 11, 192),
+                    decoration: const InputDecoration(
                       prefixIcon: Icon(
                         Icons.mail_outline_outlined,
                         color: Color.fromARGB(255, 53, 53, 53),
@@ -191,7 +193,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                 child: Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 242, 242, 242),
+                    color: const Color.fromARGB(255, 242, 242, 242),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   width: MediaQuery.of(context).size.width,
@@ -202,9 +204,9 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                     },
                     controller: _passwordController,
                     obscureText: showpassword,
-                    cursorColor: Color.fromARGB(255, 120, 11, 192),
+                    cursorColor: const Color.fromARGB(255, 120, 11, 192),
                     decoration: InputDecoration(
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.lock_outline_rounded,
                         color: Color.fromARGB(255, 53, 53, 53),
                       ),
@@ -217,32 +219,32 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                           });
                         },
                         icon: showpassword
-                            ? Icon(
+                            ? const Icon(
                                 Icons.visibility_off,
                                 color: Color.fromARGB(255, 56, 56, 56),
                               )
-                            : Icon(
+                            : const Icon(
                                 Icons.remove_red_eye_outlined,
                                 color: Color.fromARGB(255, 120, 11, 192),
                               ),
                       ),
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelStyle: TextStyle(
+                      labelStyle: const TextStyle(
                         color: Color.fromARGB(255, 120, 11, 192),
                         fontWeight: FontWeight.w800,
                       ),
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                         color: Color.fromARGB(255, 188, 188, 188),
                       ),
                       filled: true,
-                      fillColor: Color.fromARGB(255, 242, 242, 242),
-                      contentPadding: EdgeInsets.symmetric(
+                      fillColor: const Color.fromARGB(255, 242, 242, 242),
+                      contentPadding: const EdgeInsets.symmetric(
                           vertical: 15.0, horizontal: 10.0),
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                         borderSide: BorderSide.none,
                       ),
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                         borderSide: BorderSide.none,
                       ),
@@ -253,11 +255,11 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
               Center(
                 child: Padding(
                   padding: const EdgeInsets.only(top: 30),
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.of(context).size.width - 60,
                     height: 50,
                     child: _isLoading
-                        ? Center(
+                        ? const Center(
                             child: CircularProgressIndicator(
                               color: Color.fromARGB(255, 120, 11, 192),
                             ),
@@ -266,13 +268,13 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                             onPressed: _login,
                             style: ElevatedButton.styleFrom(
                               backgroundColor:
-                                  Color.fromARGB(255, 120, 11, 192),
+                                  const Color.fromARGB(255, 120, 11, 192),
                               foregroundColor: Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0),
                               ),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Log In',
                               style: TextStyle(
                                 fontWeight: FontWeight.w800,
@@ -285,11 +287,11 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width - 60,
-                padding: EdgeInsets.only(top: 55),
+                padding: const EdgeInsets.only(top: 55),
                 alignment: Alignment.center,
                 child: RichText(
                   textAlign: TextAlign.center,
-                  text: TextSpan(
+                  text: const TextSpan(
                     children: [
                       TextSpan(
                         text: "By continuing I agree to ",
@@ -317,7 +319,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
             ],
           ),
         ),

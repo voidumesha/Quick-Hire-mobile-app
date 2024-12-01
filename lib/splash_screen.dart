@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:quickhire/AuthCheck.dart';
-import 'package:quickhire/Login.dart';
 
 class SplashActivity extends StatefulWidget {
   const SplashActivity({super.key});

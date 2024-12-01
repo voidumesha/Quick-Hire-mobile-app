@@ -31,9 +31,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
-        <receiver android:name="me.carda.awesome_notifications.notifications.receivers.ActionReceiver" android:exported="true"/>
-        <receiver android:name="me.carda.awesome_notifications.notifications.receivers.DismissedReceiver" android:exported="true"/>
-        <receiver android:name="me.carda.awesome_notifications.notifications.receivers.ScheduledNotificationReceiver" android:exported="true"/>
 
     </application>
     <!-- Required to query activities that can process text, see:
@@ -48,7 +45,6 @@
         </intent>
     </queries>
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
+ 
 
 </manifest>

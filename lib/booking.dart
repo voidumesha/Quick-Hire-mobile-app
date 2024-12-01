@@ -42,7 +42,7 @@ class _bookingState extends State<booking> {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 20),
-            child: Container(
+            child: SizedBox(
               height: 75,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -58,17 +58,17 @@ class _bookingState extends State<booking> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: Color.fromARGB(255, 120, 11, 192),
+                                  color: const Color.fromARGB(255, 120, 11, 192),
                                   width: 2),
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+                                  const BorderRadius.all(Radius.circular(10))),
                           width: 240,
                           height: 40,
                           child: Padding(
                             padding: const EdgeInsets.only(left: 10, right: 10),
                             child: Text(
                               widget.faculty,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 12,
                                   color: Color.fromARGB(255, 120, 11, 192),
                                   fontFamily: 'Poppins'),
@@ -81,17 +81,17 @@ class _bookingState extends State<booking> {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: Color.fromARGB(255, 120, 11, 192),
+                                    color: const Color.fromARGB(255, 120, 11, 192),
                                     width: 2),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
+                                    const BorderRadius.all(Radius.circular(10))),
                             height: 40,
                             child: Padding(
                               padding:
                                   const EdgeInsets.only(left: 10, right: 10),
                               child: Text(
                                 widget.baj,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 12,
                                     color: Color.fromARGB(255, 120, 11, 192),
                                     fontFamily: 'Poppins'),
@@ -109,7 +109,7 @@ class _bookingState extends State<booking> {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(top: 10),
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width - 100,
                 height: 50,
                 child: ElevatedButton(
@@ -121,14 +121,14 @@ class _bookingState extends State<booking> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: index == 0
-                        ? Color.fromARGB(255, 68, 5, 110)
-                        : Color.fromARGB(255, 120, 11, 192), // Background color
+                        ? const Color.fromARGB(255, 68, 5, 110)
+                        : const Color.fromARGB(255, 120, 11, 192), // Background color
                     foregroundColor: Colors.white, // Text color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Floor 01',
                     style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
                   ),
@@ -139,7 +139,7 @@ class _bookingState extends State<booking> {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(top: 10),
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width - 100,
                 height: 50,
                 child: ElevatedButton(
@@ -151,14 +151,14 @@ class _bookingState extends State<booking> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: index == 1
-                        ? Color.fromARGB(255, 68, 5, 110)
-                        : Color.fromARGB(255, 120, 11, 192), // Background color
+                        ? const Color.fromARGB(255, 68, 5, 110)
+                        : const Color.fromARGB(255, 120, 11, 192), // Background color
                     foregroundColor: Colors.white, // Text color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Floor 02',
                     style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
                   ),
@@ -169,7 +169,7 @@ class _bookingState extends State<booking> {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(top: 10),
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width - 100,
                 height: 50,
                 child: ElevatedButton(
@@ -181,14 +181,14 @@ class _bookingState extends State<booking> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: index == 2
-                        ? Color.fromARGB(255, 68, 5, 110)
-                        : Color.fromARGB(255, 120, 11, 192), // Background color
+                        ? const Color.fromARGB(255, 68, 5, 110)
+                        : const Color.fromARGB(255, 120, 11, 192), // Background color
                     foregroundColor: Colors.white, // Text color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Floor 03',
                     style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
                   ),
@@ -196,8 +196,8 @@ class _bookingState extends State<booking> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
+          const Padding(
+            padding: EdgeInsets.only(top: 30),
             child: Text(
               "Select bed",
               textAlign: TextAlign.center,
@@ -209,23 +209,23 @@ class _bookingState extends State<booking> {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(top: 10, left: 30, right: 30),
+              padding: const EdgeInsets.only(top: 10, left: 30, right: 30),
               child: StreamBuilder<List<DocumentSnapshot>>(
                 stream: _firestoreService.getDocuments(
                   floor,
                 ),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   } else if (snapshot.hasError) {
                     return Center(child: Text('Error: ${snapshot.error}'));
                   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                    return Center(child: Text('No Data Found'));
+                    return const Center(child: Text('No Data Found'));
                   } else {
                     final documents = snapshot.data!;
                     print(snapshot.data!);
                     return GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2, // Number of columns
                         childAspectRatio: 4 / 2, // Adjust as needed
                       ),
@@ -233,7 +233,6 @@ class _bookingState extends State<booking> {
                       itemBuilder: (context, index) {
                         final document = documents[index];
                         final fieldValue = document['Booked_beds'].toString();
-                        ;
                         final roomnum = document['Room_num'].toString();
                         final faculty = document['Faculty'].toString();
                         final Batch = document['Batch'].toString();
@@ -263,11 +262,11 @@ class _bookingState extends State<booking> {
                                   child: Container(
                                     alignment: Alignment.topCenter,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                             Radius.circular(10)),
                                         border: Border.all(
                                           color: selectroom == index
-                                              ? Color.fromARGB(
+                                              ? const Color.fromARGB(
                                                   255, 120, 11, 192)
                                               : Colors.transparent,
                                         )),
@@ -276,29 +275,29 @@ class _bookingState extends State<booking> {
                                     child: Column(
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.only(top: 5),
+                                          padding: const EdgeInsets.only(top: 5),
                                           child: Container(
                                             alignment: Alignment.center,
                                             width: 40,
                                             height: 20,
                                             decoration: BoxDecoration(
                                               color: selectroom != index
-                                                  ? Color.fromARGB(
+                                                  ? const Color.fromARGB(
                                                       255, 120, 11, 192)
                                                   : Colors.green,
-                                              borderRadius: BorderRadius.all(
+                                              borderRadius: const BorderRadius.all(
                                                   Radius.circular(5)),
                                             ),
                                             child: Text(
                                               roomnum,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   color: Colors.white,
                                                   fontWeight: FontWeight.bold),
                                             ),
                                           ),
                                         ),
                                         fieldValue == '0'
-                                            ? Row(
+                                            ? const Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
                                                         .spaceAround,
@@ -330,7 +329,7 @@ class _bookingState extends State<booking> {
                                                 ],
                                               )
                                             : fieldValue == '1'
-                                                ? Row(
+                                                ? const Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceAround,
@@ -338,7 +337,7 @@ class _bookingState extends State<booking> {
                                                       Icon(
                                                         Icons.bed_rounded,
                                                         size: 35,
-                                                        color: const Color
+                                                        color: Color
                                                             .fromARGB(
                                                             255, 243, 33, 33),
                                                       ),
@@ -363,7 +362,7 @@ class _bookingState extends State<booking> {
                                                     ],
                                                   )
                                                 : fieldValue == '2'
-                                                    ? Row(
+                                                    ? const Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
                                                                 .spaceAround,
@@ -371,14 +370,14 @@ class _bookingState extends State<booking> {
                                                           Icon(
                                                             Icons.bed_rounded,
                                                             size: 35,
-                                                            color: const Color
+                                                            color: Color
                                                                 .fromARGB(255,
                                                                 243, 33, 33),
                                                           ),
                                                           Icon(
                                                             Icons.bed_rounded,
                                                             size: 35,
-                                                            color: const Color
+                                                            color: Color
                                                                 .fromARGB(255,
                                                                 243, 33, 33),
                                                           ),
@@ -405,7 +404,7 @@ class _bookingState extends State<booking> {
                                                         ],
                                                       )
                                                     : fieldValue == '3'
-                                                        ? Row(
+                                                        ? const Row(
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
                                                                     .spaceAround,
@@ -414,7 +413,7 @@ class _bookingState extends State<booking> {
                                                                 Icons
                                                                     .bed_rounded,
                                                                 size: 35,
-                                                                color: const Color
+                                                                color: Color
                                                                     .fromARGB(
                                                                     255,
                                                                     243,
@@ -425,7 +424,7 @@ class _bookingState extends State<booking> {
                                                                 Icons
                                                                     .bed_rounded,
                                                                 size: 35,
-                                                                color: const Color
+                                                                color: Color
                                                                     .fromARGB(
                                                                     255,
                                                                     243,
@@ -436,7 +435,7 @@ class _bookingState extends State<booking> {
                                                                 Icons
                                                                     .bed_rounded,
                                                                 size: 35,
-                                                                color: const Color
+                                                                color: Color
                                                                     .fromARGB(
                                                                     255,
                                                                     243,
@@ -456,7 +455,7 @@ class _bookingState extends State<booking> {
                                                             ],
                                                           )
                                                         : fieldValue == '4'
-                                                            ? Row(
+                                                            ? const Row(
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
                                                                         .spaceAround,
@@ -465,7 +464,7 @@ class _bookingState extends State<booking> {
                                                                     Icons
                                                                         .bed_rounded,
                                                                     size: 35,
-                                                                    color: const Color
+                                                                    color: Color
                                                                         .fromARGB(
                                                                         255,
                                                                         243,
@@ -476,7 +475,7 @@ class _bookingState extends State<booking> {
                                                                     Icons
                                                                         .bed_rounded,
                                                                     size: 35,
-                                                                    color: const Color
+                                                                    color: Color
                                                                         .fromARGB(
                                                                         255,
                                                                         243,
@@ -487,7 +486,7 @@ class _bookingState extends State<booking> {
                                                                     Icons
                                                                         .bed_rounded,
                                                                     size: 35,
-                                                                    color: const Color
+                                                                    color: Color
                                                                         .fromARGB(
                                                                         255,
                                                                         243,
@@ -498,7 +497,7 @@ class _bookingState extends State<booking> {
                                                                     Icons
                                                                         .bed_rounded,
                                                                     size: 35,
-                                                                    color: const Color
+                                                                    color: Color
                                                                         .fromARGB(
                                                                         255,
                                                                         243,
@@ -507,7 +506,7 @@ class _bookingState extends State<booking> {
                                                                   )
                                                                 ],
                                                               )
-                                                            : Row(
+                                                            : const Row(
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
                                                                         .spaceAround,
@@ -566,11 +565,11 @@ class _bookingState extends State<booking> {
                                   child: Container(
                                     alignment: Alignment.topCenter,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                             Radius.circular(10)),
                                         border: Border.all(
                                           color: selectroom == index
-                                              ? Color.fromARGB(255, 77, 77, 77)
+                                              ? const Color.fromARGB(255, 77, 77, 77)
                                               : Colors.transparent,
                                         )),
                                     height: 50,
@@ -578,25 +577,25 @@ class _bookingState extends State<booking> {
                                     child: Column(
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.only(top: 5),
+                                          padding: const EdgeInsets.only(top: 5),
                                           child: Container(
                                             alignment: Alignment.center,
                                             width: 40,
                                             height: 20,
-                                            decoration: BoxDecoration(
+                                            decoration: const BoxDecoration(
                                               color: Colors.grey,
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(5)),
                                             ),
                                             child: Text(
                                               roomnum,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   color: Colors.white,
                                                   fontWeight: FontWeight.bold),
                                             ),
                                           ),
                                         ),
-                                        Row(
+                                        const Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceAround,
                                           children: [
@@ -636,13 +635,13 @@ class _bookingState extends State<booking> {
           )
         ],
       )),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 50,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               width: 150,
               height: 40,
               child: ElevatedButton(
@@ -651,20 +650,20 @@ class _bookingState extends State<booking> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
-                      Color.fromARGB(255, 242, 242, 242), // Background color
+                      const Color.fromARGB(255, 242, 242, 242), // Background color
                   foregroundColor:
-                      Color.fromARGB(255, 120, 11, 192), // Text color
+                      const Color.fromARGB(255, 120, 11, 192), // Text color
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Back',
                   style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               width: 150,
               height: 40,
               child: ElevatedButton(
@@ -685,13 +684,13 @@ class _bookingState extends State<booking> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
-                      Color.fromARGB(255, 120, 11, 192), // Background color
+                      const Color.fromARGB(255, 120, 11, 192), // Background color
                   foregroundColor: Colors.white, // Text color
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Conform',
                   style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
                 ),

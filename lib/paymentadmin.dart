@@ -4,6 +4,8 @@ import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart'; // For PDF 
 import 'package:fluttertoast/fluttertoast.dart'; // For displaying toasts
 
 class UserImagesScreen extends StatelessWidget {
+  const UserImagesScreen({super.key});
+
   Future<void> _downloadFile(String url) async {
     // Your download logic here (similar to previous implementation)
   }
@@ -12,7 +14,7 @@ class UserImagesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'CV Overview',
           style: TextStyle(
             fontSize: 16,
@@ -26,7 +28,7 @@ class UserImagesScreen extends StatelessWidget {
         stream: FirebaseFirestore.instance.collection('users').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
 
           if (snapshot.hasError) {
@@ -34,7 +36,7 @@ class UserImagesScreen extends StatelessWidget {
           }
 
           if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-            return Center(child: Text('No users found.'));
+            return const Center(child: Text('No users found.'));
           }
 
           return ListView.builder(
@@ -46,7 +48,7 @@ class UserImagesScreen extends StatelessWidget {
               // Extracting data from Firestore document
               String userName = userData['name'] ?? '';
               String userEmail = userData['email'] ?? '';
-              String userFaculty = userData['faculty'] ?? '';
+
               dynamic pdfData = userData['pdfUrl'];
 
               // Prepare lists for image URLs and PDF URLs
@@ -73,16 +75,15 @@ class UserImagesScreen extends StatelessWidget {
               }
 
               return Card(
-                color: Color.fromARGB(73, 182, 64, 251),
-                margin: EdgeInsets.all(8.0),
+                color: const Color.fromARGB(73, 182, 64, 251),
+                margin: const EdgeInsets.all(8.0),
                 child: ListTile(
                   title: Text(userName),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('UEmail: $userEmail'),
-                      Text('Faculty: $userFaculty'),
-                      SizedBox(height: 8),
+                      Text('Email: $userEmail'),
+                      const SizedBox(height: 8),
                       if (imageUrls.isNotEmpty || pdfUrls.isNotEmpty)
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,7 +97,7 @@ class UserImagesScreen extends StatelessWidget {
                                     MaterialPageRoute(
                                       builder: (context) => Scaffold(
                                         appBar: AppBar(
-                                          title: Text('Image Preview'),
+                                          title: const Text('CV Preview'),
                                         ),
                                         body: Center(
                                           child: Image.network(imageUrl),
@@ -119,16 +120,16 @@ class UserImagesScreen extends StatelessWidget {
                                 children: [
                                   ElevatedButton.icon(
                                     onPressed: () => _downloadFile(pdfUrl),
-                                    icon: Icon(Icons.download),
-                                    label: Text('Download PDF'),
+                                    icon: const Icon(Icons.download),
+                                    label: const Text('Download PDF'),
                                   ),
-                                  SizedBox(height: 8),
+                                  const SizedBox(height: 8),
                                   // Display PDF icon
                                   Container(
                                     width: double.infinity,
                                     height: 200.0,
                                     color: Colors.grey[300],
-                                    child: Center(
+                                    child: const Center(
                                       child: Icon(
                                         Icons.picture_as_pdf,
                                         size: 64,

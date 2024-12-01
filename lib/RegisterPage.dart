@@ -37,7 +37,7 @@ class _RegisterState extends State<Register> {
             padding: const EdgeInsets.only(top: 30),
             child: Stack(
               children: [
-                Container(
+                SizedBox(
                   height: 130,
                   width: MediaQuery.of(context).size.width,
                   child: Align(
@@ -68,16 +68,16 @@ class _RegisterState extends State<Register> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_back,
                             size: 30,
-                            color: const Color.fromARGB(255, 53, 53, 53),
+                            color: Color.fromARGB(255, 53, 53, 53),
                           )),
                     )),
               ],
             ),
           ),
-          Text(
+          const Text(
             "Register",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -93,8 +93,8 @@ class _RegisterState extends State<Register> {
                 FocusManager.instance.primaryFocus?.unfocus();
               },
               controller: _nameController,
-              cursorColor: Color.fromARGB(255, 120, 11, 192),
-              decoration: InputDecoration(
+              cursorColor: const Color.fromARGB(255, 120, 11, 192),
+              decoration: const InputDecoration(
                 hintText: 'Username',
                 hintStyle: TextStyle(color: Color.fromARGB(255, 188, 188, 188)),
                 filled: true,
@@ -119,8 +119,8 @@ class _RegisterState extends State<Register> {
                 FocusManager.instance.primaryFocus?.unfocus();
               },
               controller: _usernameController,
-              cursorColor: Color.fromARGB(255, 120, 11, 192),
-              decoration: InputDecoration(
+              cursorColor: const Color.fromARGB(255, 120, 11, 192),
+              decoration: const InputDecoration(
                 hintText: 'Email',
                 hintStyle: TextStyle(color: Color.fromARGB(255, 188, 188, 188)),
                 filled: true,
@@ -146,9 +146,9 @@ class _RegisterState extends State<Register> {
               },
               controller: _passwordController,
               obscureText: showpassword,
-              cursorColor: Color.fromARGB(255, 120, 11, 192),
+              cursorColor: const Color.fromARGB(255, 120, 11, 192),
               decoration: InputDecoration(
-                focusColor: Color.fromARGB(255, 120, 11, 192),
+                focusColor: const Color.fromARGB(255, 120, 11, 192),
                 hintText: 'Password',
                 suffixIcon: IconButton(
                   onPressed: () {
@@ -161,25 +161,25 @@ class _RegisterState extends State<Register> {
                     });
                   },
                   icon: showpassword
-                      ? Icon(
+                      ? const Icon(
                           Icons.visibility_off,
                           color: Color.fromARGB(255, 56, 56, 56),
                         )
-                      : Icon(
+                      : const Icon(
                           Icons.remove_red_eye_outlined,
                           color: Color.fromARGB(255, 120, 11, 192),
                         ),
                 ),
-                hintStyle: TextStyle(color: Color.fromARGB(255, 188, 188, 188)),
+                hintStyle: const TextStyle(color: Color.fromARGB(255, 188, 188, 188)),
                 filled: true,
-                fillColor: Color.fromARGB(255, 242, 242, 242),
+                fillColor: const Color.fromARGB(255, 242, 242, 242),
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                border: OutlineInputBorder(
+                    const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                   borderSide: BorderSide.none,
                 ),
-                enabledBorder: OutlineInputBorder(
+                enabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                   borderSide: BorderSide.none,
                 ),
@@ -189,11 +189,11 @@ class _RegisterState extends State<Register> {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(top: 30),
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width - 60,
                 height: 50,
                 child: regloding == true
-                    ? Center(
+                    ? const Center(
                         child: CircularProgressIndicator(),
                       )
                     : ElevatedButton(
@@ -211,14 +211,14 @@ class _RegisterState extends State<Register> {
                               context: context);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(
+                          backgroundColor: const Color.fromARGB(
                               255, 120, 11, 192), // Background color
                           foregroundColor: Colors.white, // Text color
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0),
                           ),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Register',
                           style: TextStyle(
                               fontWeight: FontWeight.w800, fontSize: 18),
@@ -227,8 +227,8 @@ class _RegisterState extends State<Register> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
+          const Padding(
+            padding: EdgeInsets.only(
               top: 10,
               left: 30,
               right: 30,
@@ -242,7 +242,7 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text('or',
                       style: TextStyle(color: Color.fromARGB(255, 59, 59, 59))),
                 ),
@@ -261,11 +261,11 @@ class _RegisterState extends State<Register> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Already have a account?",
                   style: TextStyle(color: Color.fromARGB(255, 59, 59, 59)),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 50,
                 ),
                 InkWell(
@@ -276,7 +276,7 @@ class _RegisterState extends State<Register> {
                             builder: (BuildContext context) => const login()));
                   },
                   radius: 20,
-                  child: Text(
+                  child: const Text(
                     "Login",
                     style: TextStyle(
                         color: Color.fromARGB(255, 120, 11, 192),
@@ -286,7 +286,7 @@ class _RegisterState extends State<Register> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           )
         ],
@@ -362,10 +362,10 @@ class _RegisterState extends State<Register> {
         msg: message,
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.SNACKBAR,
-        backgroundColor: Color.fromARGB(134, 161, 0, 0),
-        textColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(134, 161, 0, 0),
+        textColor: const Color.fromARGB(255, 255, 255, 255),
         fontSize: 14.0,
       );
-    } catch (e) {}
+    }
   }
 }

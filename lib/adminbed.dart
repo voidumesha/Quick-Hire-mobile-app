@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TotalBookedBeds extends StatelessWidget {
+  const TotalBookedBeds({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hostel Analytics Live Dashboard',
+        title: const Text('Hostel Analytics Live Dashboard',
             style: TextStyle(
               fontSize: 16,
               fontFamily: 'Poppins',
@@ -20,7 +22,7 @@ class TotalBookedBeds extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               StreamBuilder<QuerySnapshot>(
@@ -29,16 +31,16 @@ class TotalBookedBeds extends StatelessWidget {
                     .snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
+                    return const CircularProgressIndicator();
                   }
 
                   int totalBookedBeds1stFloor = 0;
                   int documentCount1stFloor = snapshot.data!.docs.length;
                   int bedcapacity = snapshot.data!.docs.length * 4;
 
-                  snapshot.data!.docs.forEach((doc) {
+                  for (var doc in snapshot.data!.docs) {
                     totalBookedBeds1stFloor += (doc['Booked_beds'] ?? 0) as int;
-                  });
+                  }
                   int avilablebedsist = bedcapacity - totalBookedBeds1stFloor;
                   return Column(
                     children: [
@@ -48,13 +50,13 @@ class TotalBookedBeds extends StatelessWidget {
                         decoration: BoxDecoration(
                             border: Border.all(
                                 width: 2,
-                                color: Color.fromARGB(255, 120, 11, 192)),
+                                color: const Color.fromARGB(255, 120, 11, 192)),
                             borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
+                                const BorderRadius.all(Radius.circular(20))),
                         child: Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 10),
                               child: Text(
                                 'Hostel Insight - 1st Floor',
                                 style: TextStyle(
@@ -73,11 +75,11 @@ class TotalBookedBeds extends StatelessWidget {
                                 children: [
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.reduce_capacity,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Bed Capacity',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -87,7 +89,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$bedcapacity',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color: Color.fromARGB(
@@ -97,11 +99,11 @@ class TotalBookedBeds extends StatelessWidget {
                                   ),
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.mobile_friendly,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Reserved Beds',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -111,7 +113,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$totalBookedBeds1stFloor',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color:
@@ -121,11 +123,11 @@ class TotalBookedBeds extends StatelessWidget {
                                   ),
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.bedroom_child_outlined,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Available Beds',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -135,7 +137,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$avilablebedsist',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.green),
@@ -152,23 +154,24 @@ class TotalBookedBeds extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance
                     .collection('2nd_Floor')
                     .snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
+                    return const CircularProgressIndicator();
                   }
 
                   int totalBookedBeds2ndFloor = 0;
                   int documentCount2ndFloor = snapshot.data!.docs.length;
                   int ndbedcap = documentCount2ndFloor * 4;
 
-                  snapshot.data!.docs.forEach((doc) =>
-                      totalBookedBeds2ndFloor +=
-                          (doc['Booked_beds'] ?? 0) as int);
+                  for (var doc in snapshot.data!.docs) {
+                    totalBookedBeds2ndFloor +=
+                          (doc['Booked_beds'] ?? 0) as int;
+                  }
                   int avilablebeds2nd = ndbedcap - totalBookedBeds2ndFloor;
                   return Column(
                     children: [
@@ -178,13 +181,13 @@ class TotalBookedBeds extends StatelessWidget {
                         decoration: BoxDecoration(
                             border: Border.all(
                                 width: 2,
-                                color: Color.fromARGB(255, 120, 11, 192)),
+                                color: const Color.fromARGB(255, 120, 11, 192)),
                             borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
+                                const BorderRadius.all(Radius.circular(20))),
                         child: Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 10),
                               child: Text(
                                 'Hostel Insight - 2nd Floor',
                                 style: TextStyle(
@@ -203,11 +206,11 @@ class TotalBookedBeds extends StatelessWidget {
                                 children: [
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.reduce_capacity,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Bed Capacity',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -217,7 +220,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$ndbedcap',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color: Color.fromARGB(
@@ -227,11 +230,11 @@ class TotalBookedBeds extends StatelessWidget {
                                   ),
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.mobile_friendly,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Reserved Beds',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -241,7 +244,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$totalBookedBeds2ndFloor',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color:
@@ -251,11 +254,11 @@ class TotalBookedBeds extends StatelessWidget {
                                   ),
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.bedroom_child_outlined,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Available Beds',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -265,7 +268,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$avilablebeds2nd',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.green),
@@ -282,23 +285,23 @@ class TotalBookedBeds extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance
                     .collection('3rd_Floor')
                     .snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
+                    return const CircularProgressIndicator();
                   }
 
                   int totalBookedBeds3rdFloor = 0;
                   int documentCount3rdFloor = snapshot.data!.docs.length;
                   int totalbed3rd = documentCount3rdFloor * 4;
 
-                  snapshot.data!.docs.forEach((doc) {
+                  for (var doc in snapshot.data!.docs) {
                     totalBookedBeds3rdFloor += (doc['Booked_beds'] ?? 0) as int;
-                  });
+                  }
                   int avilblebed3 = totalbed3rd - totalBookedBeds3rdFloor;
                   return Column(
                     children: [
@@ -308,13 +311,13 @@ class TotalBookedBeds extends StatelessWidget {
                         decoration: BoxDecoration(
                             border: Border.all(
                                 width: 2,
-                                color: Color.fromARGB(255, 120, 11, 192)),
+                                color: const Color.fromARGB(255, 120, 11, 192)),
                             borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
+                                const BorderRadius.all(Radius.circular(20))),
                         child: Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 10),
                               child: Text(
                                 'Hostel Insight - 3rd Floor',
                                 style: TextStyle(
@@ -333,11 +336,11 @@ class TotalBookedBeds extends StatelessWidget {
                                 children: [
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.reduce_capacity,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Bed Capacity',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -347,7 +350,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$totalbed3rd',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color: Color.fromARGB(
@@ -357,11 +360,11 @@ class TotalBookedBeds extends StatelessWidget {
                                   ),
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.mobile_friendly,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Reserved Beds',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -371,7 +374,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$totalBookedBeds3rdFloor',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color:
@@ -381,11 +384,11 @@ class TotalBookedBeds extends StatelessWidget {
                                   ),
                                   Column(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.bedroom_child_outlined,
                                         size: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Available Beds',
                                         style: TextStyle(
                                           fontSize: 12,
@@ -395,7 +398,7 @@ class TotalBookedBeds extends StatelessWidget {
                                       ),
                                       Text(
                                         '$avilblebed3',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.green),
@@ -408,7 +411,7 @@ class TotalBookedBeds extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       )
                     ],

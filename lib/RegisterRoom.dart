@@ -40,7 +40,7 @@ class _regroomState extends State<regroom> {
                         padding: const EdgeInsets.only(right: 30),
                         child: Stack(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.notifications_none_sharp,
                               size: 30,
                             ), // this is the icon
@@ -62,7 +62,7 @@ class _regroomState extends State<regroom> {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 130,
                   width: MediaQuery.of(context).size.width,
                   child: Align(
@@ -73,7 +73,7 @@ class _regroomState extends State<regroom> {
                           alignment: Alignment.center,
                           width: 180,
                           height: 130,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage('assets/mainimg.png'),
                               fit: BoxFit.cover,
@@ -85,7 +85,7 @@ class _regroomState extends State<regroom> {
               ],
             ),
           ),
-          Text(
+          const Text(
             "Register Room",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -109,9 +109,9 @@ class _regroomState extends State<regroom> {
                   border: Border.all(
                       width: 2.0,
                       color: isfaculty == false
-                          ? Color.fromARGB(255, 120, 11, 192)
+                          ? const Color.fromARGB(255, 120, 11, 192)
                           : Colors.red),
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                  borderRadius: const BorderRadius.all(Radius.circular(25)),
                 ),
                 child: Center(
                     child: Row(
@@ -131,7 +131,7 @@ class _regroomState extends State<regroom> {
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w800,
                               color: isfaculty == false
-                                  ? Color.fromARGB(255, 49, 49, 49)
+                                  ? const Color.fromARGB(255, 49, 49, 49)
                                   : Colors.red),
                         ),
                       ),
@@ -143,7 +143,7 @@ class _regroomState extends State<regroom> {
                             ? Icons.arrow_drop_up
                             : Icons.arrow_drop_down_circle_outlined,
                         color: isfaculty == false
-                            ? Color.fromARGB(255, 120, 11, 192)
+                            ? const Color.fromARGB(255, 120, 11, 192)
                             : Colors.red,
                       ),
                     )
@@ -158,7 +158,7 @@ class _regroomState extends State<regroom> {
                   child: Column(
                     children: [
                       ListTile(
-                        title: Text("Faculty of Technology"),
+                        title: const Text("Faculty of Technology"),
                         onTap: () {
                           setState(() {
                             faculty = "Faculty of Technology";
@@ -169,7 +169,7 @@ class _regroomState extends State<regroom> {
                       ),
                       ListTile(
                         title:
-                            Text("Faculty of Social Sciences and Humanities"),
+                            const Text("Faculty of Social Sciences and Humanities"),
                         onTap: () {
                           setState(() {
                             faculty =
@@ -180,7 +180,7 @@ class _regroomState extends State<regroom> {
                         },
                       ),
                       ListTile(
-                        title: Text(" Faculty of Management Studies"),
+                        title: const Text(" Faculty of Management Studies"),
                         onTap: () {
                           setState(() {
                             faculty = " Faculty of Management Studies";
@@ -190,7 +190,7 @@ class _regroomState extends State<regroom> {
                         },
                       ),
                       ListTile(
-                        title: Text("Faculty of Agriculture "),
+                        title: const Text("Faculty of Agriculture "),
                         onTap: () {
                           setState(() {
                             faculty = "Faculty of Agriculture ";
@@ -200,7 +200,7 @@ class _regroomState extends State<regroom> {
                         },
                       ),
                       ListTile(
-                        title: Text("Faculty of Applied Sciences"),
+                        title: const Text("Faculty of Applied Sciences"),
                         onTap: () {
                           setState(() {
                             faculty = "Faculty of Applied Sciences";
@@ -228,9 +228,9 @@ class _regroomState extends State<regroom> {
                   border: Border.all(
                       width: 2.0,
                       color: isbatch == false
-                          ? Color.fromARGB(255, 120, 11, 192)
+                          ? const Color.fromARGB(255, 120, 11, 192)
                           : Colors.red),
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                  borderRadius: const BorderRadius.all(Radius.circular(25)),
                 ),
                 child: Center(
                     child: Row(
@@ -246,7 +246,7 @@ class _regroomState extends State<regroom> {
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w800,
                             color: isbatch == false
-                                ? Color.fromARGB(255, 49, 49, 49)
+                                ? const Color.fromARGB(255, 49, 49, 49)
                                 : Colors.red),
                       ),
                     ),
@@ -257,7 +257,7 @@ class _regroomState extends State<regroom> {
                             ? Icons.arrow_drop_up
                             : Icons.arrow_drop_down_circle_outlined,
                         color: isbatch == false
-                            ? Color.fromARGB(255, 120, 11, 192)
+                            ? const Color.fromARGB(255, 120, 11, 192)
                             : Colors.red,
                       ),
                     )
@@ -272,7 +272,7 @@ class _regroomState extends State<regroom> {
                   child: Column(
                     children: [
                       ListTile(
-                        title: Text("18/19"),
+                        title: const Text("18/19"),
                         onTap: () {
                           setState(() {
                             batch = "18/19";
@@ -282,7 +282,7 @@ class _regroomState extends State<regroom> {
                         },
                       ),
                       ListTile(
-                        title: Text("19/20"),
+                        title: const Text("19/20"),
                         onTap: () {
                           setState(() {
                             batch = "19/20";
@@ -292,7 +292,7 @@ class _regroomState extends State<regroom> {
                         },
                       ),
                       ListTile(
-                        title: Text("20/21"),
+                        title: const Text("20/21"),
                         onTap: () {
                           setState(() {
                             batch = "20/21";
@@ -320,9 +320,9 @@ class _regroomState extends State<regroom> {
                   border: Border.all(
                       width: 2.0,
                       color: isfloor == false
-                          ? Color.fromARGB(255, 120, 11, 192)
+                          ? const Color.fromARGB(255, 120, 11, 192)
                           : Colors.red),
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                  borderRadius: const BorderRadius.all(Radius.circular(25)),
                 ),
                 child: Center(
                     child: Row(
@@ -338,7 +338,7 @@ class _regroomState extends State<regroom> {
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w800,
                             color: isfloor == false
-                                ? Color.fromARGB(255, 49, 49, 49)
+                                ? const Color.fromARGB(255, 49, 49, 49)
                                 : Colors.red),
                       ),
                     ),
@@ -349,7 +349,7 @@ class _regroomState extends State<regroom> {
                             ? Icons.arrow_drop_up
                             : Icons.arrow_drop_down_circle_outlined,
                         color: isfloor == false
-                            ? Color.fromARGB(255, 120, 11, 192)
+                            ? const Color.fromARGB(255, 120, 11, 192)
                             : Colors.red,
                       ),
                     )
@@ -364,7 +364,7 @@ class _regroomState extends State<regroom> {
                   child: Column(
                     children: [
                       ListTile(
-                        title: Text("1st Floor"),
+                        title: const Text("1st Floor"),
                         onTap: () {
                           setState(() {
                             floor = "1st Floor";
@@ -374,7 +374,7 @@ class _regroomState extends State<regroom> {
                         },
                       ),
                       ListTile(
-                        title: Text("2nd Floor"),
+                        title: const Text("2nd Floor"),
                         onTap: () {
                           setState(() {
                             floor = "2nd Floor";
@@ -384,7 +384,7 @@ class _regroomState extends State<regroom> {
                         },
                       ),
                       ListTile(
-                        title: Text("3rd Floor"),
+                        title: const Text("3rd Floor"),
                         onTap: () {
                           setState(() {
                             floor = "3rd Floor";
@@ -398,15 +398,15 @@ class _regroomState extends State<regroom> {
                 )
               : Container(),
           Padding(
-            padding: EdgeInsets.only(top: 60),
-            child: Container(
+            padding: const EdgeInsets.only(top: 60),
+            child: SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 100,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     width: 110,
                     height: 35,
                     child: ElevatedButton(
@@ -414,24 +414,24 @@ class _regroomState extends State<regroom> {
                         Navigator.pop(context);
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(
+                        backgroundColor: const Color.fromARGB(
                             255, 242, 242, 242), // Background color
                         foregroundColor:
-                            Color.fromARGB(255, 120, 11, 192), // Text color
+                            const Color.fromARGB(255, 120, 11, 192), // Text color
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         'Back',
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 80,
                   ),
-                  Container(
+                  SizedBox(
                     width: 110,
                     height: 35,
                     child: ElevatedButton(
@@ -473,14 +473,14 @@ class _regroomState extends State<regroom> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(
+                        backgroundColor: const Color.fromARGB(
                             255, 120, 11, 192), // Background color
                         foregroundColor: Colors.white, // Text color
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         'Search',
                         style: TextStyle(fontSize: 17),
                       ),

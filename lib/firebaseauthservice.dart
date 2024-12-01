@@ -19,7 +19,7 @@ class AuthService {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (BuildContext context) => login(),
+          builder: (BuildContext context) => const login(),
         ),
       );
        Fluttertoast.showToast(
