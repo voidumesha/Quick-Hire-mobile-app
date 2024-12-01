@@ -25,7 +25,8 @@ class _dashboardState extends State<dashboard> {
           .doc(user.uid)
           .snapshots();
     } else {
-      return const Stream.empty(); // Return an empty stream when no user is signed in
+      return const Stream
+          .empty(); // Return an empty stream when no user is signed in
     }
   }
 
@@ -52,7 +53,8 @@ class _dashboardState extends State<dashboard> {
                         return SizedBox(
                           height: MediaQuery.of(context).size.height,
                           width: MediaQuery.of(context).size.width,
-                          child: const Center(child: CircularProgressIndicator()),
+                          child:
+                              const Center(child: CircularProgressIndicator()),
                         );
                       } else if (snapshot.hasError) {
                         return Text("Error: ${snapshot.error}");
@@ -82,7 +84,7 @@ class _dashboardState extends State<dashboard> {
                                                   Radius.circular(50)),
                                               image: DecorationImage(
                                                 image: AssetImage(
-                                                    'assets/admin.png'),
+                                                    'assets/amashi.png'),
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -117,8 +119,8 @@ class _dashboardState extends State<dashboard> {
                                           children: [
                                             IconButton(
                                               alignment: Alignment.topCenter,
-                                              icon:
-                                                  const Icon(Icons.logout, size: 25),
+                                              icon: const Icon(Icons.logout,
+                                                  size: 25),
                                               onPressed: () async {
                                                 await AuthService()
                                                     .signout(context: context);
@@ -180,8 +182,8 @@ class _dashboardState extends State<dashboard> {
                                           );
                                         },
                                         borderRadius: BorderRadius.circular(10),
-                                        splashColor:
-                                            const Color.fromARGB(255, 199, 199, 199),
+                                        splashColor: const Color.fromARGB(
+                                            255, 199, 199, 199),
                                         child: Column(
                                           children: [
                                             Container(
@@ -233,8 +235,8 @@ class _dashboardState extends State<dashboard> {
                                           );
                                         },
                                         borderRadius: BorderRadius.circular(10),
-                                        splashColor:
-                                            const Color.fromARGB(255, 199, 199, 199),
+                                        splashColor: const Color.fromARGB(
+                                            255, 199, 199, 199),
                                         child: Column(
                                           children: [
                                             Container(
@@ -273,8 +275,8 @@ class _dashboardState extends State<dashboard> {
                                           );
                                         },
                                         borderRadius: BorderRadius.circular(10),
-                                        splashColor:
-                                            const Color.fromARGB(255, 199, 199, 199),
+                                        splashColor: const Color.fromARGB(
+                                            255, 199, 199, 199),
                                         child: Column(
                                           children: [
                                             Container(

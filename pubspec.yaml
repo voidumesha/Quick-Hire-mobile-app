@@ -85,6 +85,7 @@ flutter:
   assets:
     - assets/
     - assets/USHA.png
+    - assets/amashi.png
     
   #   - images/a_dot_ham.jpeg
 
