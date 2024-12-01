@@ -32,10 +32,10 @@ String selectedfaculty = 'tech';
 
 class _bookingState extends State<booking> {
   final FirestoreService _firestoreService = FirestoreService();
- 
+
   @override
   Widget build(BuildContext context) {
-     String fac = widget.faculty;
+    String fac = widget.faculty;
     return Scaffold(
       body: SafeArea(
           child: Column(

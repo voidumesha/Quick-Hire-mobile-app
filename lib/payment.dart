@@ -206,7 +206,7 @@ class _PaymentState extends State<Payment> {
                               ),
                             )),
                         Text(
-                          "Upoload Payment Slip",
+                          "Upoload Your CV",
                           style: TextStyle(
                               fontSize: 18,
                               fontFamily: 'Poppins',

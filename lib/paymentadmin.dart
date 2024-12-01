@@ -12,13 +12,15 @@ class UserImagesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Payment Receipts Overview',style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontFamily: 'Poppins',
-                                                  fontWeight: FontWeight.w800,
-                                                  color: Color.fromARGB(
-                                                      255, 52, 52, 52),
-                                                ),),
+        title: Text(
+          'CV Overview',
+          style: TextStyle(
+            fontSize: 16,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w800,
+            color: Color.fromARGB(255, 52, 52, 52),
+          ),
+        ),
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('users').snapshots(),
@@ -43,7 +45,7 @@ class UserImagesScreen extends StatelessWidget {
 
               // Extracting data from Firestore document
               String userName = userData['name'] ?? '';
-              String userUid = userData['uid'] ?? '';
+              String userEmail = userData['email'] ?? '';
               String userFaculty = userData['faculty'] ?? '';
               dynamic pdfData = userData['pdfUrl'];
 
@@ -78,7 +80,7 @@ class UserImagesScreen extends StatelessWidget {
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('UID: $userUid'),
+                      Text('UEmail: $userEmail'),
                       Text('Faculty: $userFaculty'),
                       SizedBox(height: 8),
                       if (imageUrls.isNotEmpty || pdfUrls.isNotEmpty)

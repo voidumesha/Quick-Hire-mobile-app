@@ -30,11 +30,11 @@ class _DashboardState extends State<AdminDashboard> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Row(
+                          const Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              const Text(
-                                "Hello, Admin ! ",
+                              Text(
+                                "Hello, USHA Factory ! ",
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontFamily: 'Poppins',
@@ -69,14 +69,15 @@ class _DashboardState extends State<AdminDashboard> {
                       child: Align(
                         alignment: Alignment.topCenter,
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 10),
+                          padding: const EdgeInsets.only(top: 25),
                           child: Container(
                             alignment: Alignment.center,
-                            width: 150,
-                            height: 140,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/admin.jpg'),
+                            width: 275,
+                            height: 120,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              image: const DecorationImage(
+                                image: AssetImage('assets/USHA.png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -87,11 +88,11 @@ class _DashboardState extends State<AdminDashboard> {
                   ],
                 ),
               ),
-              Text(
-                "Admin dashboard",
+              const Text(
+                "USHA Factory dashboard",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 23,
+                  fontSize: 21,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w800,
                   color: Color.fromARGB(255, 49, 49, 49),
@@ -130,55 +131,12 @@ class _DashboardState extends State<AdminDashboard> {
                           Container(
                             width: 100,
                             child: const Text(
-                              "Add Announce",
+                              "Post Job Vacancy",
                               maxLines: 2,
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 color: Color.fromARGB(255, 52, 52, 52),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => TotalBookedBeds(),
-                          ),
-                        );
-                      },
-                      borderRadius: BorderRadius.circular(10),
-                      splashColor: const Color.fromARGB(255, 233, 233, 233),
-                      child: Column(
-                        children: [
-                          Container(
-                            alignment: Alignment.center,
-                            width: 80,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/verify (1).png'),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: Container(
-                              width: 100,
-                              child: Text(
-                                "Available room",
-                                maxLines: 2,
-                                overflow: TextOverflow.fade,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  color: Color.fromARGB(255, 52, 52, 52),
-                                ),
                               ),
                             ),
                           ),
@@ -251,7 +209,7 @@ class _DashboardState extends State<AdminDashboard> {
                             alignment: Alignment.center,
                             width: 80,
                             height: 80,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
                                     'assets/cloud-computing (1).png'),
@@ -262,7 +220,7 @@ class _DashboardState extends State<AdminDashboard> {
                           Container(
                             width: 100,
                             child: Text(
-                              "Payments status",
+                              "View CV's",
                               maxLines: 2,
                               overflow: TextOverflow.fade,
                               textAlign: TextAlign.center,

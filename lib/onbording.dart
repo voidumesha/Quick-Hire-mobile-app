@@ -27,23 +27,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         children: [
           buildOnboardingPage(
               title: 'Welcome!',
-              description: ' Manage your hostel operations efficiently.',
+              description:
+                  ' Start exploring, connecting, and building your future today!',
               image: Image.asset('assets/1.jpg')),
           buildOnboardingPage(
               title: 'Explore Features',
-              description: 'Discover the powerful tools available for booking, managing reservations',
+              description:
+                  'Your gateway to exciting job opportunities tailored just for undergraduate students',
               image: Image.asset('assets/2.jpg')),
           buildOnboardingPage(
               title: 'Ready to Go!',
-              description: 'You\'re all set to begin managing your hostel effortlessly. Let\'s get started!',
+              description:
+                  'You\'re all set to Finding jobs . Let\'s get started!',
               image: Image.asset('assets/3.jpg'),
               actionButton: ElevatedButton(
                 onPressed: () {
-                  
-                   Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (BuildContext context) => const Register()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => const Register()));
                 },
                 child: const Text('Get Started'),
               )),
@@ -70,12 +72,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold,fontFamily: 'Poppins'),
+            style: const TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Poppins'),
           ),
           const SizedBox(height: 10.0),
-          Text(description, 
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 16.0,)),
+          Text(description,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 16.0,
+              )),
           if (actionButton != null) const SizedBox(height: 20.0),
           if (actionButton != null) actionButton,
         ],
@@ -95,7 +102,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             width: _currentPage == index ? 20.0 : 10.0,
             height: 10.0,
             decoration: BoxDecoration(
-              color: _currentPage == index ? Color.fromARGB(255, 120, 11, 192) : Colors.grey,
+              color: _currentPage == index
+                  ? Color.fromARGB(255, 120, 11, 192)
+                  : Colors.grey,
               borderRadius: BorderRadius.circular(5.0),
             ),
           );

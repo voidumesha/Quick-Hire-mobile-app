@@ -160,8 +160,8 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
                         Icons.mail_outline_outlined,
                         color: Color.fromARGB(255, 53, 53, 53),
                       ),
-                      hintText: 'Admin',
-                      labelText: "User Name",
+                      hintText: 'Alankulama',
+                      labelText: "company Name",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       labelStyle: TextStyle(
                         color: Color.fromARGB(255, 120, 11, 192),

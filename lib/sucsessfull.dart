@@ -43,19 +43,20 @@ class _sucsessState extends State<sucsess> {
             ),
             SizedBox(height: 20),
             Text(
-              'Booking Successful!',
+              'Upload CV Successful!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
             Text(
-              'Thank you for booking a room with us.', // Display actual room number
+              textAlign: TextAlign.center,
+              'Thank you for exploring job opportunities  with us!',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 fontFamily: 'Poppins',
               ),
             ),
             Text(
-              'We look forward to hosting you!', // Display actual room number
+              'We look forward to contact you!',
               style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'Poppins',

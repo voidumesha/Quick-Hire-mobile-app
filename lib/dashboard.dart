@@ -209,117 +209,6 @@ class _dashboardState extends State<dashboard> {
                                           ],
                                         ),
                                       ),
-                                      data?['booked_room'] == 'No'
-                                          ? InkWell(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          regroom()),
-                                                );
-                                              },
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              splashColor: const Color.fromARGB(
-                                                  255, 199, 199, 199),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                      alignment:
-                                                          Alignment.center,
-                                                      width: 80,
-                                                      height: 80,
-                                                      decoration:
-                                                          const BoxDecoration(
-                                                        image: DecorationImage(
-                                                          image: AssetImage(
-                                                              'assets/verify (1).png'),
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      )),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            top: 10),
-                                                    child: Container(
-                                                        width: 100,
-                                                        child: const Text(
-                                                          "Register to a room",
-                                                          maxLines: 2,
-                                                          overflow:
-                                                              TextOverflow.fade,
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: TextStyle(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              color: Color
-                                                                  .fromARGB(
-                                                                      255,
-                                                                      52,
-                                                                      52,
-                                                                      52)),
-                                                        )),
-                                                  )
-                                                ],
-                                              ))
-                                          : Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(20)),
-                                                color: Colors.grey,
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                    alignment: Alignment.center,
-                                                    width: 80,
-                                                    height: 80,
-                                                    decoration: BoxDecoration(
-                                                      color: Colors
-                                                          .transparent, // Ensure the container's background is transparent
-                                                    ),
-                                                    child: ColorFiltered(
-                                                      colorFilter:
-                                                          ColorFilter.mode(
-                                                        Colors.grey,
-                                                        BlendMode
-                                                            .color, // Try other blend modes like BlendMode.modulate
-                                                      ),
-                                                      child: Image.asset(
-                                                        'assets/verify (1).png',
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            top: 10),
-                                                    child: Container(
-                                                        width: 100,
-                                                        child: Text(
-                                                          "Register to a room",
-                                                          maxLines: 2,
-                                                          overflow:
-                                                              TextOverflow.fade,
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: TextStyle(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              color: Color
-                                                                  .fromARGB(
-                                                                      255,
-                                                                      52,
-                                                                      52,
-                                                                      52)),
-                                                        )),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
                                     ],
                                   ),
                                 ),
@@ -401,7 +290,7 @@ class _dashboardState extends State<dashboard> {
                                             Container(
                                                 width: 100,
                                                 child: Text(
-                                                  "Upoload Payment Slip",
+                                                  "Upoload your CV",
                                                   maxLines: 2,
                                                   overflow: TextOverflow.fade,
                                                   textAlign: TextAlign.center,
@@ -430,8 +319,8 @@ class _dashboardState extends State<dashboard> {
                                     height: 55,
                                     color:
                                         const Color.fromARGB(48, 244, 67, 54),
-                                    child: Text(
-                                      "Please upload your payment slip for the booked room.",
+                                    child: const Text(
+                                      "Please upload your CV.",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontFamily: 'Poppins',
@@ -442,8 +331,8 @@ class _dashboardState extends State<dashboard> {
                           ],
                         );
                       } else {
-                        return Padding(
-                          padding: const EdgeInsets.only(left: 10),
+                        return const Padding(
+                          padding: EdgeInsets.only(left: 10),
                           child: Text(
                             "Hello, Student! ",
                             style: TextStyle(
