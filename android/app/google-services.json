@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "197381711256",
+    "project_id": "hostmanege",
+    "storage_bucket": "hostmanege.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197381711256:android:d613abd4f1109986f0b7ed",
+        "android_client_info": {
+          "package_name": "com.example.hostmanege"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_2xM3I5SXCdKRTSqa6lh3_UT5ioBtSbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
